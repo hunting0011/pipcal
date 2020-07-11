@@ -12,7 +12,7 @@
     }
 </style>
 <h2 style="text-align: center">Forex - Position size calculator</h2>
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-sm-4"><label for="">Quote Symbol</label></div>
         <div class="col-sm-8">
@@ -57,5 +57,43 @@
             <label id="volume" style="font-weight: bold;font-size: 20px"></label>
         </div>
     </div>
-    
+
+</div> -->
+
+
+<div class="container">
+    <div class="form-group">
+        <label for="">Quote Symbol</label>
+        <select class="form-control" id="quoteSymbol">
+            <option value="USD">USD</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+            <option value="CHF">CHF</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <option value="NZD">NZD</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">Stoploss</label>
+
+        <input type="number" class="form-control" id="stoploss" value="70">
+
+    </div>
+    <div class="form-group">
+        <label for="">Stoploss price</label>
+        <input type="number" class="form-control" id="stoplossPrice" placeholder="Stoploss price">
+    </div>
+    <div class="form-group">
+        <label for="">Entry Price</label>
+        <input type="number" class="form-control" id="entryPrice" placeholder="Entry Price">
+    </div>
+    <div class="form-group">
+        <label for="">Quote Price</label>
+        <input type="number" class="form-control" id="quotePrice" value="1">
+    </div>
+    <div class="form-group">
+        <label for="">Volume</label>
+        <label id="volume" style="font-weight: bold;font-size: 20px"></label>
+    </div>
 </div>
