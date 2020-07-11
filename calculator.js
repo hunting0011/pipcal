@@ -11,6 +11,7 @@ $(document).ready(function () {
         let quoteSymbol = $('#quoteSymbol').val();
         if (quoteSymbol == 'USD') {
             $('#quotePrice').val(1);
+            $('#quotePrice').trigger("change");
             return;
         }
         let symbol = quoteSymbol + '_USD';
@@ -18,21 +19,22 @@ $(document).ready(function () {
 
         $.get(url, function (data) {
             $('#quotePrice').val(data[symbol]);
+            $('#quotePrice').trigger("change");
         });
-
+        
     });
 });
 
-var calculateVolume = function(){
+var calculateVolume = function () {
     let stoploss = $('#stoploss').val();
-        let stoplossPrice = $('#stoplossPrice').val();
-        let entryPrice = $('#entryPrice').val();
-        let quotePrice = $('#quotePrice').val();
+    let stoplossPrice = $('#stoplossPrice').val();
+    let entryPrice = $('#entryPrice').val();
+    let quotePrice = $('#quotePrice').val();
 
-        let volume = $('#quoteSymbol').val() == 'JPY'
-            ? stoploss / (1000 * (entryPrice - stoplossPrice) * quotePrice)
-            : stoploss / (100000 * (entryPrice - stoplossPrice) * quotePrice);
+    let volume = $('#quoteSymbol').val() == 'JPY'
+        ? stoploss / (1000 * (entryPrice - stoplossPrice) * quotePrice)
+        : stoploss / (100000 * (entryPrice - stoplossPrice) * quotePrice);
 
-        $('#volume').text(Number(volume).toFixed(3));
-        $('#quotePrice').trigger("change");
+    $('#volume').text(Number(volume).toFixed(3));
+
 };
