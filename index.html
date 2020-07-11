@@ -1,1 +1,61 @@
-Hello!!!
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="calculator.js"></script>
+<style>
+    .buy {
+        color: green
+    }
+
+    .sell {
+        color: red
+    }
+</style>
+<h2 style="text-align: center">Forex - Position size calculator</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"><label for="">Quote Symbol</label></div>
+        <div class="col-sm-8">
+            <select class="form-control" id="quoteSymbol">
+                <option value="USD">USD</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="CHF">CHF</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+                <option value="NZD">NZD</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><label for="">Stoploss</label></div>
+        <div class="col-sm-8">
+            <input type="number" class="form-control" id="stoploss" value="70">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><label for="">Stoploss price</label></div>
+        <div class="col-sm-8">
+            <input type="number" class="form-control" id="stoplossPrice">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><label for="">Entry Price</label></div>
+        <div class="col-sm-8">
+            <input type="number" class="form-control" id="entryPrice">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><label for="">Quote Price</label></div>
+        <div class="col-sm-8">
+            <input type="number" class="form-control" id="quotePrice" value="1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><label for="">Volume</label></div>
+        <div class="col-sm-8">
+            <label id="volume" style="font-weight: bold;font-size: 20px"></label>
+        </div>
+    </div>
+    
+</div>
