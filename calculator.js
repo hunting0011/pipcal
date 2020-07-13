@@ -14,14 +14,13 @@ $(document).ready(function () {
             $('#quotePrice').trigger("change");
             return;
         }
-        let symbol = quoteSymbol + '_USD';
-        let url = 'https://free.currconv.com/api/v7/convert?q=' + symbol + '&compact=ultra&apiKey=36c60fab2348765fb4cb'
+
+        let url = 'https://api.exchangeratesapi.io/latest?symbols=USD&base='+ quoteSymbol;
 
         $.get(url, function (data) {
-            $('#quotePrice').val(data[symbol]);
+            $('#quotePrice').val(data.rates.USD);
             $('#quotePrice').trigger("change");
         });
-        
     });
 });
 
@@ -31,9 +30,7 @@ var calculateVolume = function () {
     let entryPrice = $('#entryPrice').val();
     let quotePrice = $('#quotePrice').val();
 
-    let volume = $('#quoteSymbol').val() == 'JPY'
-        ? stoploss / (1000 * (entryPrice - stoplossPrice) * quotePrice)
-        : stoploss / (100000 * (entryPrice - stoplossPrice) * quotePrice);
+    let volume = stoploss / (100000 * (entryPrice - stoplossPrice) * quotePrice);
 
     $('#volume').text(Number(volume).toFixed(3));
 
