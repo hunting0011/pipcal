@@ -1,0 +1,58 @@
+<meta name="viewport"
+    content="width=device-width, height=device-height,  initial-scale=1.0, user-scalable=no;user-scalable=0;" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="calbypip.js"></script>
+<style>
+    input,
+    select {
+        font-size: 100%;
+    }
+
+    .buy {
+        color: green
+    }
+
+    .sell {
+        color: red
+    }
+</style>
+<h2 style="text-align: center">Forex - Position size calculator</h2>
+
+<div class="container">
+    <div class="form-group">
+        <label for="">Quote Symbol</label>
+        <select class="form-control input-lg" id="quoteSymbol">
+            <option value="USD">USD</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+            <option value="CHF">CHF</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <option value="NZD">NZD</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">Stoploss</label>
+
+        <input type="number" class="form-control input-lg" id="stoploss" value="70">
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="">Stoploss Pips</label>
+        <input type="number" class="form-control input-lg" id="stoplossPip" placeholder="Stoploss Pips">
+
+    </div>
+
+    <div class="form-group">
+        <label for="">Quote Price</label>
+        <input type="number" class="form-control input-lg" id="quotePrice" value="1" readonly>
+    </div>
+    <div class="form-group">
+        <label for="">Volume</label>
+        <label id="volume" style="font-weight: bold;font-size: 36px"></label>
+    </div>
+</div>
