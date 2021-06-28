@@ -15,10 +15,13 @@ $(document).ready(function () {
             return;
         }
 
-        let url = 'https://api.exchangeratesapi.io/latest?symbols=USD&base='+ quoteSymbol;
+        // let url = 'https://api.exchangeratesapi.io/latest?symbols=USD&base='+ quoteSymbol;
+        let symbol = quoteSymbol + '_USD';
+        let url = 'https://free.currconv.com/api/v7/convert?q=' + symbol + '&compact=ultra&apiKey=36c60fab2348765fb4cb'
 
         $.get(url, function (data) {
-            $('#quotePrice').val(data.rates.USD);
+            // $('#quotePrice').val(data.rates.USD);
+            $('#quotePrice').val(data[symbol]);
             $('#quotePrice').trigger("change");
         });
     });
