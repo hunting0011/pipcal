@@ -18,11 +18,23 @@ $(document).ready(function () {
         // let url = 'https://api.exchangeratesapi.io/latest?symbols=USD&base='+ quoteSymbol;
         let symbol = quoteSymbol + '_USD';
         let url = 'https://free.currconv.com/api/v7/convert?q=' + symbol + '&compact=ultra&apiKey=36c60fab2348765fb4cb'
-
-        $.get(url, function (data) {
-            // $('#quotePrice').val(data.rates.USD);
-            $('#quotePrice').val(data[symbol]);
-            $('#quotePrice').trigger("change");
+        
+        $.ajax({
+            url: url,
+            type: 'GET',
+            success: function(data){ 
+                // $('#quotePrice').val(data.rates.USD);
+                $('#quotePrice').val(data[symbol]);
+                $('#quotePrice').trigger("change");
+                localStorage.setItem(symbol,data[symbol]);
+            },
+            error: function(data) {
+                let cachedVal = localStorage.getItem(symbol);
+                if(cachedVal != null && cachedVal != undefined){
+                    $('#quotePrice').val(cachedVal);
+                    $('#quotePrice').trigger("change");
+                }
+            }
         });
     });
 });
