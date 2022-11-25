@@ -17,7 +17,7 @@ $(document).ready(function () {
 
         // let url = 'https://api.exchangeratesapi.io/latest?symbols=USD&base='+ quoteSymbol;
         let symbol = quoteSymbol + '_USD';
-        let url = 'https://free.currconv.com/api/v7/convert?q=' + symbol + '&compact=ultra&apiKey=36c60fab2348765fb4cb'
+        let url = 'https://free.currconv.com/api/v7/convert?q=' + symbol + '&compact=ultra&apiKey=9aea9609d8aa855711a8'
         
         $.ajax({
             url: url,
